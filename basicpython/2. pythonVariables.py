@@ -6,6 +6,6 @@ nama = "rudi"
 umur = "25"
 
 # Menggunakan/memanggil variabel dalam pernyataan
-print = ("NAMA : ", nama)
-print = ("UMUR : ", umur)
+print("NAMA : ", nama)
+print("UMUR : ", umur)
 
