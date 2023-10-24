@@ -1,0 +1,17 @@
+import paramiko
+
+ip_address = '192.168.163.135'
+username = 'admin'
+password = ''
+
+ssh_client = paramiko.SSHClient()
+ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh_client.connect(hostname=ip_address,username=username, password=password)
+
+print("Success Login to {}".format(ip_address))
+
+ssh_client.exec_command("interface bridge add name=loopback10\n")
+
+ssh_client.exec_command("ip address add address 10.10.10.10/24 interface=loopback10\n")
+
+ssh_client.close()
